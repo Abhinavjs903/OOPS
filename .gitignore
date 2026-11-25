@@ -1,0 +1,19 @@
+# Compiled executables
+*.exe
+*.out
+game
+
+# Object and debug files
+*.o
+*.obj
+*.pdb
+*.ilk
+
+# IDE/editor files
+.vscode/
+.idea/
+*.code-workspace
+
+# Temporary files and logs
+*.tmp
+*.log
