@@ -1,0 +1,39 @@
+classDiagram
+    class Player {
+        #string name
+        #char symbol
+        +Player(string, char)
+        +makeMove()*
+        +getName() string
+        +getSymbol() char
+        +~Player()
+    }
+
+    class HumanPlayer {
+        +HumanPlayer(string, char)
+        +makeMove() void
+    }
+
+    class Board {
+        -char grid[3][3]
+        +Board()
+        +reset() void
+        +display() void
+        +isValidMove(int, int) bool
+        +placeMove(int, int, char) bool
+        +checkWinner(char) bool
+        +isFull() bool
+    }
+
+    class Game {
+        -Board board
+        -unique_ptr~Player~ players[2]
+        -int currentPlayer
+        +Game()
+        +switchTurn() void
+        +play() void
+    }
+
+    Player <|-- HumanPlayer
+    Game *-- Board
+    Game *-- Player : owns two players
